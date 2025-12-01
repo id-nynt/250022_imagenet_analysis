@@ -1,0 +1,40 @@
+{
+  "performance_gap": {
+    "val_accuracy": 0.86856,
+    "test_accuracy": 0.7647,
+    "gap_percentage": 10.385999999999996,
+    "average_class_delta": 0.10385999999999998
+  },
+  "distribution_shift": {
+    "mean_ks_statistic": 0.02686833984375,
+    "max_ks_statistic": 0.16287999999999997,
+    "top_shifted_features": [
+      "f170",
+      "f308",
+      "f150",
+      "f211",
+      "f623",
+      "f986",
+      "f327",
+      "f12",
+      "f551",
+      "f955"
+    ],
+    "chi_square_clusters": 9.72392616931189,
+    "chi_square_pvalue": 0.045343949019284714
+  },
+  "problematic_classes": {
+    "worst_performance_drop": [
+      497,
+      204,
+      679,
+      898,
+      201
+    ],
+    "avg_delta_worst_classes": 0.718
+  },
+  "hypothesis": [
+    "Domain shift detected: Val and Test have different feature distributions",
+    "Systematic performance drop: Average delta = 10.39%"
+  ]
+}

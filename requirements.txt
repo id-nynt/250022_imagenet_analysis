@@ -1,0 +1,19 @@
+# Core dependencies
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+xgboost>=2.0.0
+scipy>=1.10.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Hyperparameter tuning
+optuna>=3.4.0
+
+# Device detection (for CUDA/MPS support)
+torch>=2.0.0
+
+# Note: For CUDA support in XGBoost, install with:
+# pip install xgboost[gpu] or conda install -c conda-forge xgboost-gpu

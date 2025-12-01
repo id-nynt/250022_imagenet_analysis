@@ -1,0 +1,4 @@
+Model,Val,Test,Gap
+Baseline,86.86,76.47,10.39
+Domain-Weighted,88.33,79.54,8.789999999999992
+Class-Weighted,87.75,78.44,9.310000000000002

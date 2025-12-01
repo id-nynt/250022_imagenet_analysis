@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-10-14 18:47:21",
+  "val_top1_accuracy": 0.86856,
+  "val_top5_accuracy": 0.95138,
+  "test_top1_accuracy": 0.7647,
+  "test_top5_accuracy": 0.8743,
+  "training_time_minutes": 3.525,
+  "num_training_samples": 1153050,
+  "num_validation_samples": 50000,
+  "num_test_samples": 10000,
+  "hyperparameters": {
+    "objective": "multi:softprob",
+    "num_class": 1000,
+    "tree_method": "hist",
+    "device": "cuda",
+    "eval_metric": "mlogloss",
+    "eta": 0.12482239745005622,
+    "max_depth": 4,
+    "subsample": 0.5,
+    "colsample_bytree": 0.5,
+    "reg_lambda": 0.6279040428885944,
+    "random_state": 42,
+    "seed": 42,
+    "max_bin": 64,
+    "grow_policy": "lossguide",
+    "max_leaves": 32
+  }
+}
