@@ -78,7 +78,7 @@ Raw Data (CSVs - 1.3M+ samples)
 
 ### Baseline Performance Gap
 
-![Model Performance Comparison](images/model_comparison.png)
+![Model Performance Comparison](/plots/model_comparison.png)
 
 The **machine learning** baseline using **XGBoost** demonstrates strong validation accuracy but significant cross-domain degradation:
 
@@ -89,19 +89,19 @@ The **machine learning** baseline using **XGBoost** demonstrates strong validati
 
 ### Feature Distribution Shift (H1)
 
-![t-SNE Domain Visualization](images/tsne_val_vs_test.png)
+![t-SNE Domain Visualization](/plots/tsne_val_vs_test.png)
 
 **Dimensionality reduction** using t-SNE reveals clear clustering separation between validation and test domains, indicating substantial **covariate shift** in the high-dimensional feature space.
 
 **Key Finding**: Top 10 features by KS statistic show significant distribution divergence, suggesting **domain-specific feature patterns** learned by the deep learning model.
 
-![Feature Shift Analysis](images/feature_distribution_shifts.png)
+![Feature Shift Analysis](/plots/feature_distribution_shifts.png)
 
 ---
 
 ### Per-Class Vulnerability Analysis (H2)
 
-![Confusion Matrices](images/cm_val_problem.png)
+![Confusion Matrices](/plots/cm_val_problem.png)
 
 **Data science** analysis of per-class accuracy reveals heterogeneous domain shift:
 
@@ -109,7 +109,7 @@ The **machine learning** baseline using **XGBoost** demonstrates strong validati
 - Others show dramatic accuracy loss (vulnerable)
 - Average class-level delta: [-3.2%, +2.8%] range
 
-![Class Accuracy Deltas](images/class_accuracy_delta.csv)
+**Class Accuracy Deltas**: See [results/class_accuracy_delta.csv](/results/class_accuracy_delta.csv)
 
 **Most Vulnerable Classes**: Certain object categories show >10% accuracy drops, while others remain stable across domains.
 
@@ -117,7 +117,7 @@ The **machine learning** baseline using **XGBoost** demonstrates strong validati
 
 ### Feature Importance Analysis (H3)
 
-![Feature Importances](images/feature_importances.png)
+![Feature Importances](/plots/feature_importances.png)
 
 **Machine learning** analysis of **feature importance** scores reveals:
 
@@ -195,7 +195,7 @@ Target vulnerable classes through **adaptive class weighting**:
 
 ## 📊 Cluster & Distribution Analysis
 
-![Cluster Distribution](images/cluster_distribution.png)
+![Cluster Distribution](/plots/cluster_distribution.png)
 
 K-means clustering (k=10) applied to validation vs. test embeddings shows:
 
@@ -240,19 +240,29 @@ Each phase produced versioned artifacts enabling reproducibility and iterative r
 ## 📁 File Structure
 
 ```
-├── Assignment3_Report.md          # Comprehensive written analysis
-├── Baseline_Classifier_Report.md  # Detailed baseline methodology
-├── report.tex                     # Full LaTeX report with appendices
-├── images/                        # Visualizations & analysis plots
+├── README.md                      # Project documentation
+├── requirements.txt               # Python package dependencies
+├── code/                          # Analysis notebooks and scripts
+│   ├── 01_data_analysis.ipynb
+│   ├── 02_experiments_pipeline.ipynb
+│   └── 03_hypothesis_testing.py
+├── data/                          # Input data
+│   ├── features/
+│   └── images/
+├── plots/                         # Visualizations & analysis plots
 │   ├── feature_importances.png
 │   ├── tsne_val_vs_test.png
 │   ├── cluster_distribution.png
 │   ├── feature_distribution_shifts.png
 │   ├── cm_val_problem.png
-│   └── model_comparison.png
-├── image-val/                     # Validation set analysis images
-├── image-v2/                      # Test set analysis images
-└── README.md                      # Code execution & artifact guide
+│   ├── model_comparison.png
+│   └── ...
+├── results/                       # Analysis results & artifacts
+│   ├── class_accuracy_delta.csv
+│   ├── feature_importances.csv
+│   ├── model_refined_comparison.csv
+│   └── ...
+└── report/                        # Generated reports
 ```
 
 ---
